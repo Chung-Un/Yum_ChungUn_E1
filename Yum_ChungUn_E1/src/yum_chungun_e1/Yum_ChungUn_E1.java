@@ -15,16 +15,17 @@ public class Yum_ChungUn_E1 {
 
     
     public static void main(String[] args) {
-       int opciones=0, canalNormal=0,canalHd=0,tipoCanal,tipoCaja,subTotal=0, cantVocales=0,cantFilas,contadorNumeros=0,max=0,temp=10;
+       int opciones=0,suma=0, canalNormal=0,canalHd=0,tipoCanal,tipoCaja,subTotal=0, cantVocales=0,cantFilas,numeroImpar=1,sumaNumeros=0,contadorNumeros=0,max=0,temp=10;
        Scanner entrada = new Scanner (System.in);
        String nombreCliente, otroCanal="", cadenaUsuario,otroNumero="",numerosCadena="";
        char letra;
        int numeros[] = new int[temp]; 
-
+       double promedio;
       
        
+      do{
        
-       System.out.println("Ingrese el ejercicio que desea acceder:\n1.Piramide\n2.El mayor\n3.Clientes\n4.Caracteres vocales");
+       System.out.println("Ingrese el ejercicio que desea acceder:\n1.Piramide\n2.El mayor\n3.Clientes\n4.Caracteres vocales\n5.Salir");
        opciones = entrada.nextInt();
        entrada.nextLine();
        
@@ -35,8 +36,15 @@ public class Yum_ChungUn_E1 {
                cantFilas = entrada.nextInt();
                
                for(int i =0; i<cantFilas ; i++){
-              
-               
+                   suma=0;
+                  for(int j=0; j<=i;j++){
+                  System.out.print(numeroImpar + " "  );
+                  suma = suma+numeroImpar;
+                  numeroImpar = numeroImpar+2;
+                  }
+                  
+                  System.out.println("=" + suma);
+                  System.out.println(" ");
                } 
                
             break;
@@ -55,7 +63,15 @@ public class Yum_ChungUn_E1 {
               for(int i =0;i<contadorNumeros;i++){
               max = Math.max(max,numeros[i]);
               }
-              System.out.println(max);
+              System.out.println("El numero maximo es: " + max);
+              
+              for(int i = 0;i<contadorNumeros;i++){
+              sumaNumeros = sumaNumeros + numeros[i];
+              }
+              promedio = sumaNumeros/contadorNumeros;
+              
+              System.out.println("El promedio de los numeros es: " + promedio);
+              
        
             break;
        
@@ -158,7 +174,7 @@ public class Yum_ChungUn_E1 {
                System.out.println("Hasta luego");
                System.exit(0);
             
-        }
+        }}while(opciones!=5);
     
     
     
